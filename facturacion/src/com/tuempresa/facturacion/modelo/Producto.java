@@ -25,14 +25,14 @@ public class Producto {
 	Categoria categoria;
 
 	
-	@Money
+	@Stereotype("DINERO")
 	BigDecimal precio;
 	
-	@Files
+	@Stereotype("GALERIA_IMAGENES")
 	@Column(length=32)
 	String fotos;
 	
-	@TextArea
+	@Stereotype("TEXTO_GRANDE")
 	String observaciones;
 	
 	@ManyToOne(fetch=FetchType.LAZY )
