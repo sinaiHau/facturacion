@@ -9,17 +9,15 @@ import com.tuempresa.facturacion.modelo.*;
 import lombok.*;
 
 
-
 public class CalculadorPrecioPorUnidad implements ICalculator{
-  @Getter @Setter
-  int numeroProducto;
+
+	@Getter @Setter
+	int numeroProducto;
 	
-  @Override
+	@Override
 	public Object calculate() throws Exception {
-		 Producto producto = getManager()
-				  .find(Producto.class, numeroProducto);
+		Producto producto = getManager()
+				.find(Producto.class, numeroProducto);
 		return producto.getPrecio();
 	}
-	
-	
 }

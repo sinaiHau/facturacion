@@ -10,33 +10,31 @@ import lombok.*;
 
 @Entity
 @Getter @Setter
-
 public class Producto {
-	@Id @Column (length = 9)
-	int numero;
-	
-	@Column(length=50)@Required
-	String descripcion;
-	
-	@ManyToOne
-	(fetch=FetchType.LAZY,
-	optional=true)
-	@DescriptionsList
-	Categoria categoria;
+@Id 
+@Column(length=9)
+int numero;
 
+@Column(length=50)
+String descripcion;
+
+@ManyToOne(
+		fetch=FetchType.LAZY,
+        optional=true)
+@DescriptionsList
+Categoria categoria;
+
+@Money
+BigDecimal precio;
 	
-	@Stereotype("DINERO")
-	BigDecimal precio;
-	
-	@Stereotype("GALERIA_IMAGENES")
-	@Column(length=32)
-	String fotos;
-	
-	@Stereotype("TEXTO_GRANDE")
-	String observaciones;
-	
-	@ManyToOne(fetch=FetchType.LAZY )
-	@DescriptionsList
-	Autor autor;
-	
+@Files
+@Column(length=32)
+String fotos;
+
+@TextArea
+String observaciones;
+
+@ManyToOne
+@DescriptionsList
+Autor autor;
 }

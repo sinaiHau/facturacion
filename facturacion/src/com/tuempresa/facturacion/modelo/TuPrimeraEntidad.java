@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 import org.openxava.annotations.*;
 import org.openxava.model.*;
-
 import lombok.*;
 
 /**
