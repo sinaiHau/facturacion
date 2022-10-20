@@ -89,4 +89,6 @@ abstract public class DocumentoComercial extends Identificable{
     BigDecimal beneficioEstimado;
     
     
+    
+    
 }
