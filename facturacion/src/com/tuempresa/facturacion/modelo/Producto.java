@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 import org.openxava.annotations.*;
 
+import com.tuempresa.facturacion.anotaciones.*;
+
 import lombok.*;
 
 @Entity
@@ -18,24 +20,28 @@ int numero;
 @Column(length=50)
 String descripcion;
 
-  @ManyToOne(
+@ManyToOne(
 		fetch=FetchType.LAZY,
         optional=true)
- @DescriptionsList
-  Categoria categoria;
+@DescriptionsList
+Categoria categoria;
 
-  @Money
-  BigDecimal precio;
+@Money
+BigDecimal precio;
 	
-  @Files
-  @Column(length=32)
-  String fotos;
+@Files
+@Column(length=32)
+String fotos;
 
-  @TextArea
-  String observaciones;
+@TextArea
+String observaciones;
 
-     @ManyToOne
-     @DescriptionsList
-     Autor autor;
-  
+@ManyToOne
+@DescriptionsList
+Autor autor;
+
+ 
+@Column(length=13) 
+@ISBN(buscar=false)
+String isbn;
 }
